@@ -186,7 +186,6 @@ def logout():
 def get_all_posts():
     result = db.session.execute(db.select(BlogPost))
     posts = result.scalars().all()
-    print(MY_PASSWORD, MY_EMAIL)
     return render_template("index.html", all_posts=posts, current_user=current_user)
 
 
